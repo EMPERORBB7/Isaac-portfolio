@@ -1,0 +1,780 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-container {
+  display: flex;
+}
+
+/* Bubble base */
+.bubble {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 50%;
+  margin: 4px;
+}
+
+.bubble-grid {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 8px;
+  z-index: 0;
+}
+
+.top-right-grid {
+  top: 50px;
+  right: 40px;
+}
+
+.top-left-grid {
+  top: 100px;
+  left: 30px;
+}
+
+/* Bubble style */
+.bubble {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(128, 128, 128, 0.2); /* light grey */
+  margin: 4px;
+}
+
+/* Main wave container */
+.bubble-wave {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 0;
+}
+
+/* Each row of bubbles */
+.wave-row {
+  display: flex;
+  gap: 6px;
+}
+
+/* Wavy stagger effect */
+.wave-row:nth-child(odd) {
+  transform: translateX(0px);
+}
+
+.wave-row:nth-child(even) {
+  transform: translateX(6px);
+}
+
+.nav-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 150px;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+
+  color: red;
+}
+
+.hero-text {
+  margin-left: 150px;
+}
+
+.hero-container {
+  display: flex;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.shadowed-name {
+  margin-top: -5px;
+  color: red;
+  font-size: 65px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hero-description {
+  width: 490px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.hero-buttons {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.portfolio-button {
+  background-color: rgb(100, 74, 74);
+  color: white;
+  padding: 5px 10px;
+  width: 170px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.contact-me-button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  width: 170px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.right-side {
+  display: flex;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.right-side img {
+  align-self: center;
+  margin-top: 60px;
+  margin-left: 70px;
+  width: 350px;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-container {
+  display: flex;
+  gap: 50px;
+  margin-left: 150px;
+  padding: 50px;
+}
+
+.footer-links {
+  margin-bottom: -20px;
+  font-size: 18px;
+  display: flex;
+  gap: 70px;
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 150px; /* Same padding as the hero container */
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-skills {
+  flex: 1;
+  min-width: 250px;
+}
+
+.about-skills h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.about-skills ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.about-skills li {
+  margin-bottom: 10px;
+}
+
+/* Services Section */
+.services-section {
+  padding: 60px 150px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.services-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Services Container (Grid Layout) */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Service Item */
+.service-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.service-item p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Service Icons (Red) */
+.service-icon {
+  font-size: 40px;
+  color: red;
+  margin-bottom: 15px;
+}
+
+.service-icon i {
+  font-size: 40px;
+}
+
+/* Add this to your CSS */
+.portfolio-section {
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  background: #f9f9f9;
+}
+
+.coming-soon-container {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.coming-soon-content {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+}
+
+.coming-soon-icon {
+  font-size: 50px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.coming-soon-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.coming-soon-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.progress-bar {
+  width: 65%;
+  height: 100%;
+  background: red;
+  border-radius: 3px;
+  animation: progress 2s ease-in-out infinite alternate;
+}
+
+.coming-soon-bubbles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.1;
+  grid-template-columns: repeat(3, auto);
+}
+
+@keyframes progress {
+  0% {
+    width: 65%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+@media (max-width: 768px) {
+  /* General adjustments */
+  body {
+    overflow-x: hidden;
+  }
+
+  .main-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  /* Navigation */
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 0;
+    padding: 20px;
+    align-items: center;
+  }
+
+  /* Hero section */
+  .hero-container {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-left: 0;
+  }
+
+  .shadowed-name {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .hero-text p:first-child {
+    text-align: center;
+  }
+
+  .hero-description {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .portfolio-button,
+  .contact-me-button {
+    width: 200px;
+    font-size: 18px;
+    padding: 8px;
+    margin: 5px 0;
+  }
+
+  /* Right side image */
+  .right-side {
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 0;
+  }
+
+  .right-side img {
+    width: 80%;
+    height: auto;
+    max-height: 400px;
+    margin-left: 0;
+  }
+
+  /* Bubble decorations */
+  .bubble-grid,
+  .bubble-wave {
+    display: none;
+  }
+
+  /* Footer */
+  .footer-container {
+    margin-left: 0;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  /* About section */
+  .about-section {
+    padding: 40px 20px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  /* Services section */
+  .services-section {
+    padding: 40px 20px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact section */
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-links a {
+    width: 80%;
+    justify-content: center;
+  }
+
+  /* Portfolio section */
+  .portfolio-section {
+    padding: 40px 15px;
+  }
+}
+
+/* iPhone 5/SE specific adjustments */
+@media (max-width: 320px) {
+  .shadowed-name {
+    font-size: 28px;
+  }
+
+  .hero-buttons button {
+    width: 180px;
+  }
+
+  .right-side img {
+    width: 90%;
+  }
+}
+
+/* For larger mobile devices */
+@media (min-width: 414px) and (max-width: 768px) {
+  .shadowed-name {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+}
+
+/* Touch-friendly hover states */
+@media (hover: none) {
+  a:hover,
+  button:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .nav-container {
+    justify-content: center;
+    margin-left: 0;
+    gap: 30px;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .hero-description {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .right-side {
+    justify-content: center;
+  }
+
+  .right-side img {
+    width: 80%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .footer-container {
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .shadowed-name {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    margin-left: 0;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .portfolio-button,
+  .contact-button {
+    width: 140px;
+    font-size: 18px;
+  }
+
+  .right-side {
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .right-side img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    gap: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+  }
+
+  .bubble-grid,
+  .bubble-wave {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .coming-soon-content {
+    padding: 30px 20px;
+  }
+
+  .coming-soon-icon {
+    font-size: 40px;
+  }
+}
+
+/* Add this to your CSS file */
+.contact-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: #666;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label,
+.form-group textarea:focus + label,
+.form-group textarea:valid + label {
+  top: -10px;
+  left: 10px;
+  background: white;
+  padding: 0 5px;
+  font-size: 14px;
+  color: red;
+}
+
+.contact-button {
+  background-color: red;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: rgba(255, 0, 0, 0.05);
+  border-color: red;
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
